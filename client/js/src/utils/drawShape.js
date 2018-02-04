@@ -51,7 +51,7 @@ export default class Shape {
     }
 
     drawSector(x, y, radius, startAngle, endAngle, color) {
-        //this.context.beginPath();
+        this.context.beginPath();
         this.context.moveTo(x,y);
         this.context.arc(x,y,radius,startAngle,endAngle);
         this.context.lineTo(x,y);
@@ -59,5 +59,19 @@ export default class Shape {
         this.context.fill();
         //this.context.strokeStyle = color || 'green';
         //this.context.stroke(); 
+    }
+    
+    drawPie(x, y, radius, sectorsAmount, colors) {
+        let sectorAngle = (2 * Math.PI) / sectorsAmount;
+        let startAngle = 0;
+        
+        for (let i = 0; i < sectorsAmount; i++) {
+            let endAngle = startAngle + sectorAngle;
+            let color = colors[i] || 'green';
+            
+            this.drawSector(x, y, radius, startAngle, endAngle, color);
+            
+            startAngle += sectorAngle;
+        }
     }
 }

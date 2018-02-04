@@ -6,7 +6,7 @@
     "dev": "webpack -w",
     "build": "webpack --progress --color -p --config webpack.production.config.js"
   },
-  "author": "Sergey Filyuk",
+  "author": "Ievgenii Spitsyn, Sergey Filyuk",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.8.1",

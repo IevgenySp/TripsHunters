@@ -81,10 +81,12 @@ class Map extends Component {
         //console.log(this.routeData);
 
         if (this.state.menuPosition.length > 0) {
-            this.shape.drawCircle(
+            this.shape.drawPie(
                 this.state.menuPosition[0],
                 this.state.menuPosition[1],
-                10
+                10,
+                3,
+                ['green', 'red', 'blue']
             );
             this.shape.drawLine(
                 this.state.prevMenuPosition[0],
